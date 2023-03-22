@@ -8,7 +8,7 @@ public class Question10 {
 		
 		int minNum = Integer.MAX_VALUE;
 		int maxNum = Integer.MIN_VALUE;
-		
+		System.out.println("ìˆ«ìë¥¼ ì¼ê³± ê°œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		int[]userNum = new int[7];
 		
 		for(int i = 0; i < 7; i++) {
@@ -23,8 +23,8 @@ public class Question10 {
 				maxNum = userNum[i];
 			}
 		}
-			System.out.println("°¡Àå ³ôÀº Á¡¼ö´Â :" + maxNum);
-			System.out.println("°¡Àå ³·Àº Á¡¼ö´Â :" + minNum);
+			System.out.println("ìµœëŒ€ê°’ :" + maxNum);
+			System.out.println("ìµœì†Œê°’ :" + minNum);
 		scanner.close();
 	}
 }

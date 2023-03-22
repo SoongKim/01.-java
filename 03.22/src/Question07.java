@@ -4,11 +4,10 @@ public class Question07 {
 
 	public static void main(String[] args) {
 		Random random = new Random();
-		int ranNum = random.nextInt(100);
-
-		System.out.println("ÀÓÀÇÀÇ ¼ıÀÚ´Â " + ranNum);
-
-		System.out.println("¼Ò¼ö´Â ´ÙÀ½°ú °°½À´Ï´Ù.");
+		int ranNum = random.nextInt(101);
+		
+		System.out.println("ì…ë ¥í•˜ì‹  ìˆ«ìëŠ” "+ ranNum);
+		System.out.println("ì…ë ¥í•˜ì‹  ìˆ«ìê¹Œì§€ ì¡´ì¬í•˜ëŠ” ì†Œìˆ˜ë¡œëŠ”");
 		boolean primeNum = true;
 		for (int i = 0; i < (ranNum + 1); i++) {
 			if(i < 2) {

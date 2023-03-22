@@ -11,15 +11,15 @@ public class Question05 {
 			}
 			System.out.println();
 		}
-//		for(int x = 7; x > 0; x--) {
-//			for(int y = 8; y > x; y--) {
-//				System.out.print(" ");
-//			}
-//			for(int z = 0; z < 2*x1; z++) {
-//				System.out.print("*");
-//			}
-//			System.out.println();
-//		}
+		for(int x = 9; x > 0; x--) {
+			for(int y = 9; y > x; y--) {
+				System.out.print(" ");
+			}
+			for(int z = 0; z < (2*x-1); z++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 		
 	}
 }
