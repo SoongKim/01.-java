@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Homework01 {
+public class Homework2Final {
 
 	public static void main(String[] args) {
 
@@ -17,11 +17,13 @@ public class Homework01 {
 			}
 		}
 		
-		for(int[]newNum : inputNum) {
-			for(int newColumn : newNum) {
-				System.out.print(newColumn + " ");
-			}
-			System.out.println(arrays.);
-		}
+//		for(int[]newNum : inputNum) {
+//			for(int newColumn : newNum) {
+//				System.out.print(newColumn + " ");
+//			}
+//			System.out.println();
+//		}
+		System.out.print(Arrays.deepToString(inputNum));
+		scanner.close();
 	}
 }
