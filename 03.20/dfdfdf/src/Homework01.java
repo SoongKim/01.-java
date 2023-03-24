@@ -21,7 +21,7 @@ public class Homework01 {
 			for(int newColumn : newNum) {
 				System.out.print(newColumn + " ");
 			}
-			System.out.println(Arrays.toString(newNum));
+			System.out.println(Arrays.deepToString(inputNum));
 		}
 	}
 }

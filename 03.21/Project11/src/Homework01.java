@@ -17,11 +17,11 @@ public class Homework01 {
 			}
 		}
 		
-		for(int[]newNum : inputNum) {
-			for(int newColumn : newNum) {
-				System.out.print(newColumn + " ");
-			}
-			System.out.println(arrays.);
-		}
+//		for(int[]newNum : inputNum) {
+//			for(int newColumn : newNum) {
+//				System.out.print(newColumn + " ");
+//			}
+//	}
+			System.out.println(Arrays.deepToString(inputNum));
 	}
 }
