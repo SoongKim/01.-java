@@ -20,5 +20,7 @@ public class Question05 {
 			}
 			System.out.println();
 		}
+	// 하부의 경우 최종 출력물의 갯수가 한 층 낮으며,
+	//	시작 시점부터 공백이 출력되어야 함을 고려하여야 한다.
 	}
 }
