@@ -16,15 +16,26 @@ public class Homework2Final {
 				inputNum[3][3] += inputNum[i][j];
 			}
 		}
-
-// 		4 X 4 형태로 데이터를 출력하고 싶다면 아래의 명령을 수행
-//		for(int[]newNum : inputNum) {
-//			for(int newColumn : newNum) {
-//				System.out.print(newColumn + " ");
-//			System.out.println();
-//			}
-//		}
-		System.out.print(Arrays.deepToString(inputNum));
+		
+		for(int i = 0; i < inputNum.length; i++) {
+			for(int j = 0; j < inputNum.length; j++) {
+				System.out.printf("%4d", inputNum[i][j]);
+			}
+		System.out.println();
+		}
+		
+		System.out.println();
+		
+ 		// 4x4 형태의 배열을 원한다면
+		for(int[]newNum : inputNum) {
+			for(int newColumn : newNum) {
+				System.out.print(newColumn + " ");
+			}
+			System.out.println();
+		}
+		
+		
+//		System.out.print(Arrays.deepToString(inputNum));
 		scanner.close();
 	}
 }

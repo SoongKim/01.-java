@@ -7,7 +7,7 @@ public class Main02 {
 		System.out.println(func(userNum));
 	}
 
-	public static int func(int a) {
+	public int func(int a) {
 		if(a > 199)
 			return a;
 		else
