@@ -5,7 +5,7 @@ public class HowMuch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
-				
+
 		int T = Integer.parseInt(scanner.next());
 		int S = Integer.parseInt(scanner.next());
 		if (S == 0) {
@@ -18,6 +18,6 @@ public class HowMuch {
 		} else if (S == 1) {
 			System.out.println(280);
 		}
-	scanner.close();
+		scanner.close();
 	}
 }
