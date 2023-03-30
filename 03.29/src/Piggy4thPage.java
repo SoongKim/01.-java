@@ -4,14 +4,15 @@ public class Piggy4thPage {
 
 	int account = 0;
 	String accountName = "돼지";
-	boolean breakcount = true;
+	boolean accountOpen = true;
+	int accountNumber = 0;
 	// 전역 변수 설정
 	
 	public void Insert() {
 	// Piggy4thPage 클래스의 Insert 메소드 호출 시 적용.
 	// 대상 계좌에 입력받은 입금액 만큼을 삽입. 출력이 이뤄진 계좌에는 입금을 제한하는 기능을 수행.
 		Scanner scanner = new Scanner(System.in);
-		if (this.breakcount == false) {
+		if (this.accountOpen == false) {
 			System.out.println("한 번 출금하신 저금통은 재생성 시까지 입금이 불가합니다.");
 			System.out.println("다른 저금통을 이용하시거나 현 저금통을 재생성해주세요.");
 		} else {
@@ -42,7 +43,7 @@ public class Piggy4thPage {
 				int withrawMoney = this.account;
 				System.out.println("총" + withrawMoney + "원을 인출하였습니다.");
 				this.account = 0;
-				this.breakcount = false;
+				this.accountOpen = false;
 			}
 		} else if (yOrN.equals("n")) {
 			System.out.println("메인 화면으로 돌아갑니다.");
@@ -67,5 +68,18 @@ public class Piggy4thPage {
 	// 현 계좌의 잔고 총액을 표시하는 기능을 수행한다.
 		System.out.println(this.accountName + " 계좌 잔액은 총 " + this.account + "원 입니다.");
 		System.out.println("메인 화면으로 돌아갑니다.");
+	}
+	
+	public int accountOpen(int accountNumber) {
+		Piggy3rdPage p3p = new Piggy3rdPage();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("계좌번호를 다시 한 번 입력해주세요.");
+		String inputNum = scanner.nextLine();
+		int inputUserNum = Integer.parseInt(inputNum);
+		this.accountNumber = inputUserNum;
+		System.out.println(this.accountNumber + "번 계좌를 기동하겠습니다.");
+		this.accountOpen = true;
+		p3p.main(this.accountNumber);
+		return this.accountNumber;
 	}
 }

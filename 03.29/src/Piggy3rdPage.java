@@ -4,8 +4,9 @@ public class Piggy3rdPage {
 
 	public static void main(int n) {
 		// TODO Auto-generated method stub
-		Piggy4thPage pb = new Piggy4thPage();
-		// Piggy4thPage 클래스를 pb 라는 이름으로 호출.
+		Piggy2ndPage p2p = new Piggy2ndPage();
+		Piggy4thPage p4p = new Piggy4thPage();
+		// Piggy4thPage 클래스를 p4p 라는 이름으로 호출.
 		
 		System.out.println(n + " 번 계좌에서 작업을 시작합니다.");
 		
@@ -20,16 +21,16 @@ public class Piggy3rdPage {
 			System.out.println("");
 			String userInput = scanner.nextLine();
 			if(userInput.equals("1")) {
-				pb.Insert();
+				p4p.Insert();
 			}
 			else if(userInput.equals("2")) {
-				pb.Withdraw();
+				p4p.Withdraw();
 			}
 			else if(userInput.equals("3")) {
-				pb.checkAccount();
+				p4p.checkAccount();
 			}
 			else if(userInput.equals("0")) {
-				pb.nameTag();
+				p4p.nameTag();
 			}
 			else if(userInput.equals("q")) {
 				System.out.println("프로그램을 종료합니다.");
