@@ -47,6 +47,7 @@ public class PiggyBank01 {
 							int changeName = Integer.parseInt(scanner.nextLine());
 							pb3[changeName].nameTag();
 						} else if (userInput.equals("5")) {
+							System.out.println("몇 번 계좌를 생성하시겠습니까?");
 							int createAccount = Integer.parseInt(scanner.nextLine());
 							if (pb3[createAccount].accountOpen == true) {
 								System.out.println("이미 사용 중인 계좌입니다.");
@@ -61,7 +62,7 @@ public class PiggyBank01 {
 						}
 					}
 				}
-			} else {
+			} else{
 				System.out.println("올바른 값을 입력해주세요.");
 			}
 		}

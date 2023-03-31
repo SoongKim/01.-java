@@ -68,7 +68,7 @@ public class PiggyBank03 {
 	}
 
 	public void checkAccount() {
-		System.out.println(this.accountNumber + " 번 " + this.accountName + " 계좌의 잔액은 총 " + this.account + "원 입니다.");
+		System.out.println("해당 계좌의 잔액은 총 " + this.account + "원 입니다.");
 		System.out.println("메인 화면으로 돌아갑니다.");
 	}
 	public void errorMessage() {
