@@ -9,6 +9,11 @@ public class Piggy2ndPage {
 		Piggy4thPage p4p = new Piggy4thPage();
 		// Piggy3rdPage 클래스를 pb 라는 이름으로 호출.
 		// Piggy4thPage 클래스를 p4p 라는 이름으로 호출.
+		
+		for(int i = 0; i < 100; i++) {
+			pb[i] = new Piggy3rdPage();
+		}
+		
 		System.out.println("몇 번 계좌를 이용하시겠습니까?");
 		System.out.println("0~99까지 총 100개 계좌의 이용이 가능하십니다.");
 		Scanner scanner = new Scanner(System.in);

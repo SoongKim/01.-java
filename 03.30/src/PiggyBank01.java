@@ -62,10 +62,9 @@ public class PiggyBank01 {
 						}
 					}
 				}
-			} else{
+			} else {
 				System.out.println("올바른 값을 입력해주세요.");
 			}
 		}
-
 	}
 }
