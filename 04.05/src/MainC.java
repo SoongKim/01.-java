@@ -12,7 +12,8 @@ public class MainC {
 		// TODO Auto-generated method stub
 		MainC manager = new MainC();
 		List<String> regionId = new ArrayList<String>();
-
+		List<Integer> regionCou = new ArrayList<Integer>();
+		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("[인력 관리 프로그램입니다.]");
 		System.out.println("관리 인원 수를 입력해주세요.");
@@ -52,7 +53,6 @@ public class MainC {
 					}
 					int rgIndex = Integer.parseInt(scanner.nextLine());
 					System.out.println(rgIndex + "번 " + regionId.get(rgIndex) + "지역을 선택하셨습니다.");
-					
 					load[userIndex].genderInput();
 					load[userIndex].userInput();
 
