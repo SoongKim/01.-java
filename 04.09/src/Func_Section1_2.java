@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Func {
+public class Func_Section1_2 {
 
 	String userName = "";
 	String residence = "";

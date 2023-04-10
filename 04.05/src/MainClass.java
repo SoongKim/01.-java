@@ -13,9 +13,9 @@ public class MainClass {
 		System.out.println("관리 인원 수를 입력해주세요.");
 		Scanner scanner = new Scanner(System.in);
 		int userNum = Integer.parseInt(scanner.nextLine());
-		MainProgram[] manager = new MainProgram[userNum];
+		MainProgram_section1and3[] manager = new MainProgram_section1and3[userNum];
 		for (int i = 0; i < userNum; i++) {
-			manager[i] = new MainProgram();
+			manager[i] = new MainProgram_section1and3();
 		}
 		System.out.println("관리 지역 수를 입력해주세요.");
 		int localNum = Integer.parseInt(scanner.nextLine());

@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-public class MainClass {
-// 6개 지역을 대상으로 이름, 거주지역, 성별을 확인할 수 있는 프로그램.
+public class MainClass_Section1_2 {
+// 스텝 1-2
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("관리 인원 수를 입력해주세요.");
 		int userNum = Integer.parseInt(scanner.nextLine());
 		System.out.println(userNum+" 명을 선택하셨습니다.");
-		Func []func = new Func[userNum];
+		Func_Section1_2 []func = new Func_Section1_2[userNum];
 		for(int i = 0; i < userNum; i++) {
-			func[i] = new Func();
+			func[i] = new Func_Section1_2();
 		}
 		
 		for(int i = 0; i < 999999; i++) {

@@ -2,12 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainProgram {
+public class MainProgram_section1and3 {
 	String nameData = "";
 	boolean maleCount = false;
 	boolean femaleCount = false;
 	boolean userInput = false;
-
+	String gender = "";
+	
+	
 	public void userInput() {
 		this.userInput = true;
 	}
@@ -25,9 +27,11 @@ public class MainProgram {
 		System.out.println("1:남성|2:여성");
 		String userGender = scanner.nextLine();
 		if (userGender.equals("1")) {
+			this.gender = "남성";
 			this.maleCount = true;
 			System.out.println("해당 인원의 성별은 남성입니다.");
 		} else if (userGender.equals("2")) {
+			this.gender = "여성";
 			this.femaleCount = true;
 			System.out.println("해당 인원의 성별은 여성입니다.");
 		} else {

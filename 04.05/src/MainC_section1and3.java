@@ -3,16 +3,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainC {
+public class MainC_section1and3 {
 
 	int userNum = 0;
 	int regionCount = 0;
-
+// 스텝 1 & 3
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MainC manager = new MainC();
+		MainC_section1and3 manager = new MainC_section1and3();
 		List<String> regionId = new ArrayList<String>();
-		List<Integer> regionCou = new ArrayList<Integer>();
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("[인력 관리 프로그램입니다.]");
@@ -20,10 +19,10 @@ public class MainC {
 		int userNumber = Integer.parseInt(scanner.nextLine());
 		manager.userNum = manager.userNum + userNumber;
 
-		MainProgram[] load = new MainProgram[manager.userNum];
+		MainProgram_section1and3[] load = new MainProgram_section1and3[manager.userNum];
 
 		for (int c = 0; c < manager.userNum; c++) {
-			load[c] = new MainProgram();
+			load[c] = new MainProgram_section1and3();
 		}
 		System.out.println("총 " + manager.userNum + "명을 설정하셨습니다.");
 		System.out.println("관리 대상 지역 수를 입력해주세요.");
@@ -36,7 +35,7 @@ public class MainC {
 			System.out.println("[메인 메뉴]");
 			System.out.println("원하시는 기능을 선택해주세요.");
 			System.out.println("[1] 정보 입력");
-			System.out.println("[2] 지역별 인원 수 확인");
+			System.out.println("[2] 전체 정보 확인");
 			System.out.println("[3] 성별 인원 수 확인");
 			System.out.println("[4] 관리 지역 추가");
 			String userInfo = scanner.nextLine();
@@ -59,9 +58,6 @@ public class MainC {
 				} else if (load[userIndex].userInput) {
 					System.out.println("이미 사용 중인 번호입니다.");
 				}
-			} else if (userInfo.equals("2")) {
-				System.out.println("지역별 인원 수 확인을 선택하셨습니다.");
-				System.out.println(regionId);
 			} else if (userInfo.equals("3")) {
 				System.out.println("성별 인원 수 확인을 선택하셨습니다.");
 				int maleC = 0, femaleC = 0;
@@ -86,7 +82,13 @@ public class MainC {
 				}
 				System.out.println("총 관리 지역은 다음과 같습니다.");
 				System.out.println(regionId);
-			} else {
+			}else if(userInfo.equals("2")) {
+				System.out.println("전체 정보를 확인합니다.");
+				for(int tot = 0; tot < manager.userNum; tot++) {
+					System.out.println("이름 : " + load[tot].nameData + " 성별 : "+load[tot].gender);
+				}
+			}
+			else {
 				System.out.println("잘못된 정보를 입력하셨습니다.");
 			}
 			System.out.println();
