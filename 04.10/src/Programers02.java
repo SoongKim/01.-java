@@ -4,8 +4,8 @@ class Programers02 {
 
 	public boolean solution(int x) {
 		boolean answer = true;
-		Scanner scanner = new Scanner(System.in);
-		String userNum = scanner.nextLine();
+		int usernum = x;
+		String userNum = Integer.toString(x);
 		String[] arr = userNum.split("");
 		
 		int sum = 0;
