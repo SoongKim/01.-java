@@ -5,8 +5,8 @@ public class ClassRoom {
 	String name;// A반, B반, C반...
 	Student[] student = new Student[100];
 
-	public void main() {
-		// TODO Auto-generated method stub
+	public static void main() {
+
 		ClassRoom classroom = new ClassRoom();
 		for (int i = 0; i < 100; i++) {
 			classroom.student[i] = new Student();
@@ -57,37 +57,37 @@ public class ClassRoom {
 					System.out.println("몇 번 학생의 성적 정보를 불러올까요?");
 					int stuNum03 = Integer.parseInt(scanner.next());
 					System.out.println("조회하실 성적의 학기와 고사를 선택해주세요.");
-					System.out.println("[0] 1학기_중간 [1] 1학기_기말 [2] 2학기_중간 [3] 2학기_기말");
+					System.out.println("[1] 1학기_중간 [2] 1학기_기말 [3] 2학기_중간 [4] 2학기_기말");
 					String userSels = scanner.next();
-					if (userSels.equals("0")) {
+					if (userSels.equals("1")) {
 						if (classroom.student[stuNum03].test0 == true) {
-							System.out.println(classroom.student[stuNum03].test[0].testName + " " + classroom.student[stuNum03].test[0].korTest + " : " + classroom.student[stuNum03].test[0].korScore);
-							System.out.println(classroom.student[stuNum03].test[0].testName + " " + classroom.student[stuNum03].test[0].engTest + " : " + classroom.student[stuNum03].test[0].engScore);
-							System.out.println(classroom.student[stuNum03].test[0].testName + " " + classroom.student[stuNum03].test[0].mathTest + " : " + classroom.student[stuNum03].test[0].mathScore);
+							System.out.println("국어 점수 " + classroom.student[stuNum03].test[0].korScore);
+							System.out.println("영어 점수 " + classroom.student[stuNum03].test[0].engScore);
+							System.out.println("수학 점수 " + classroom.student[stuNum03].test[0].mathScore);
 						} else if (classroom.student[stuNum03].test0 == false) {
 							System.out.println("아직 입력되지 않은 성적 정보를 조회하셨습니다.");
 						}
-					} else if (userSels.equals("1")) {
+					} else if (userSels.equals("2")) {
 						if (classroom.student[stuNum03].test1 == true) {
-							System.out.println(classroom.student[stuNum03].test[1].testName + " " + classroom.student[stuNum03].test[1].korTest + " : " + classroom.student[stuNum03].test[1].korScore);
-							System.out.println(classroom.student[stuNum03].test[1].testName + " " + classroom.student[stuNum03].test[1].engTest + " : " + classroom.student[stuNum03].test[1].engScore);
-							System.out.println(classroom.student[stuNum03].test[1].testName + " " + classroom.student[stuNum03].test[1].mathTest + " : " + classroom.student[stuNum03].test[1].mathScore);
+							System.out.println("국어 점수 " + classroom.student[stuNum03].test[1].korScore);
+							System.out.println("영어 점수 " + classroom.student[stuNum03].test[1].engScore);
+							System.out.println("수학 점수 " + classroom.student[stuNum03].test[1].mathScore);
 						} else if (classroom.student[stuNum03].test1 == false) {
 							System.out.println("아직 입력되지 않은 성적 정보를 조회하셨습니다.");
 						}
-					} else if (userSels.equals("2")) {
+					} else if (userSels.equals("3")) {
 						if (classroom.student[stuNum03].test2 == true) {
-							System.out.println(classroom.student[stuNum03].test[2].testName + " " + classroom.student[stuNum03].test[2].korTest + " : " + classroom.student[stuNum03].test[2].korScore);
-							System.out.println(classroom.student[stuNum03].test[2].testName + " " + classroom.student[stuNum03].test[2].engTest + " : " + classroom.student[stuNum03].test[2].engScore);
-							System.out.println(classroom.student[stuNum03].test[2].testName + " " + classroom.student[stuNum03].test[2].mathTest + " : " + classroom.student[stuNum03].test[2].mathScore);
+							System.out.println("국어 점수 " + classroom.student[stuNum03].test[2].korScore);
+							System.out.println("영어 점수 " + classroom.student[stuNum03].test[2].engScore);
+							System.out.println("수학 점수 " + classroom.student[stuNum03].test[2].mathScore);
 						} else if (classroom.student[stuNum03].test2 == false) {
 							System.out.println("아직 입력되지 않은 성적 정보를 조회하셨습니다.");
 						}
-					} else if (userSels.equals("3")) {
+					} else if (userSels.equals("4")) {
 						if (classroom.student[stuNum03].test3 == true) {
-							System.out.println(classroom.student[stuNum03].test[3].testName + " " + classroom.student[stuNum03].test[3].korTest + " : " + classroom.student[stuNum03].test[3].korScore);
-							System.out.println(classroom.student[stuNum03].test[3].testName + " " + classroom.student[stuNum03].test[3].engTest + " : " + classroom.student[stuNum03].test[3].engScore);
-							System.out.println(classroom.student[stuNum03].test[3].testName + " " + classroom.student[stuNum03].test[3].mathTest + " : " + classroom.student[stuNum03].test[3].mathScore);
+							System.out.println("국어 점수 " + classroom.student[stuNum03].test[3].korScore);
+							System.out.println("영어 점수 " + classroom.student[stuNum03].test[3].engScore);
+							System.out.println("수학 점수 " + classroom.student[stuNum03].test[3].mathScore);
 						} else if (classroom.student[stuNum03].test3 == false) {
 							System.out.println("아직 입력되지 않은 성적 정보를 조회하셨습니다.");
 						}
@@ -119,14 +119,13 @@ public class ClassRoom {
 					engscore = engscore + classroom.student[userNums].test[i].engScore;
 					mathscore = mathscore + classroom.student[userNums].test[i].mathScore;
 				}
-				
 				double korAvg = korscore / (double) index;
 				double engAvg = engscore / (double) index;
 				double mathAvg = korscore / (double) index;
 				System.out.println(userNums + "번 학생이 취득한 국어 평균 점수는 " + korAvg);
 				System.out.println(userNums + "번 학생이 취득한 영어 평균 점수는" + engAvg);
 				System.out.println(userNums + "번 학생이 취득한 수학 평균 점수는" + mathAvg);
-				
+
 			} else if (menuSel.equals("4")) {
 				System.out.println("학급 통합 성적 조회를 선택하셨습니다.");
 				double index1 = 0, index2 = 0, index3 = 0, index4 = 0;
@@ -139,7 +138,7 @@ public class ClassRoom {
 						korFstMid = korFstMid + classroom.student[i].test[0].korScore;
 						engFstMid = engFstMid + classroom.student[i].test[0].engScore;
 						mathFstMid = mathFstMid + classroom.student[i].test[0].mathScore;
-					} 
+					}
 					if (classroom.student[i].test1 == true) {
 						index2++;
 						korFstFin = korFstFin + classroom.student[i].test[1].korScore;
@@ -159,7 +158,6 @@ public class ClassRoom {
 						mathSndFin = mathSndFin + classroom.student[i].test[3].mathScore;
 					}
 				}
-				
 				System.out.println("학급 1학기 중간고사 국어 총점은 : " + korFstMid);
 				System.out.println("학급 1학기 기말고사 국어 총점은 : " + korFstFin);
 				System.out.println("학급 2학기 중간고사 국어 총점은 : " + korSndMid);

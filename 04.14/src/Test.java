@@ -2,11 +2,8 @@ import java.util.Scanner;
 
 public class Test {
 	int korScore = 0;
-	String korTest = "국어 성적";
 	int engScore = 0;
-	String engTest = "영어 성적";
 	int mathScore = 0;
-	String mathTest = "수학 성적";
 	String testName = "";
 	public void testInfo() {
 	
