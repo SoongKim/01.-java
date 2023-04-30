@@ -22,7 +22,7 @@ public class Base {
 	Scanner scanner = new Scanner(System.in);
 	DiceModule dm = new DiceModule();
 	Random random = new Random();
-
+	
 	// 기술 선택창. 각 클래스에서 @Override 받아 특성별로 입력해주세요.
 	// 해당 Method를 통해 공격 데미지를 설정합니다.
 	public void attackMethod() {
@@ -53,29 +53,39 @@ public class Base {
 	// 대상이 플레이어블로 지정되지 않은 경우, 공격 주사위를 굴리는 클래스
 	public void autoAttack01() {
 		System.out.println();
-		System.out.println("컴퓨터가 동전을 던집니다.");
+		System.out.println(this.name + "이/가 동전을 던집니다.");
+		System.out.println();
 		int skillOrAttack = random.nextInt(2);
 		if (skillOrAttack == 0) {
 			System.out.println("앞면이 나왔습니다. 일반 공격을 사용합니다.");
-			System.out.println();
 		} else {
 			System.out.println("뒷면이 나왔습니다. 기술을 시전합니다.");
-			System.out.println();
 		}
 	}
 
 	public void autoAttack02() {
 		if (this.token) {
-			System.out.println("컴퓨터가 10면체 주사위를 굴립니다.");
+			System.out.println(this.name + " 이/가 " + "10면체 주사위를 굴립니다.");
 			int comAttack = dm.diceTen();
+			
+			try {
+			      Thread.sleep(1000);
+			    } catch (InterruptedException e) { }
+			
 			System.out.println(comAttack + " 이 나왔습니다.");
 			this.attackpower = comAttack;
 			System.out.println();
 		} else {
-			System.out.println("컴퓨터가 10면체 주사위를 굴립니다.");
-			int comAttack = dm.diceTen();
+			System.out.println(this.name + " 이/가 " + "10면체 주사위를 굴립니다.");
+			System.out.println();
 			// @Override해서 각 클래스 친구들이 적으로 등장했을 때
 			// 데미지를 결정할 기술과, 데미지 산식을 적용해주세요.
+			
+			try {
+			      Thread.sleep(1000);
+			    } catch (InterruptedException e) { }
+			int comAttack = dm.diceTen();
+			
 			System.out.println(comAttack + "면이 나왔습니다.");
 			this.attackpower = comAttack;
 			System.out.println();
@@ -86,117 +96,12 @@ public class Base {
 	// 지금 로직대로면, 자해를 막을 수 없습니다.
 	// 탈락한 캐릭터에 대한 공격이 발생할 경우를 막을 추가 제어 또한 필요합니다.
 	public void autoAttack03() {
-		Player01 p1 = new Player01();
-		Player02 p2 = new Player02();
-		Player03 p3 = new Player03();
-		Player04 p4 = new Player04();
-		Player05 p5 = new Player05();
-		System.out.println();
-		System.out.println(this.name + "이/가 공격 대상을 정합니다.");
-		int comSels = random.nextInt(4);
-		if (comSels == 0) {
-			System.out.println(p1.name + "을 공격합니다.");
-			System.out.println(p1.name + " 에게 " + this.attackpower + "데미지!");
-			p1.hp = p1.hp - this.attackpower;
-			System.out.println();
-			System.out.println(p1.name + " " + p1.hp + "/" + "100");
-			p1.isLive();
-			p1.toString();
-		} else if (comSels == 1) {
-			System.out.println(p2.name + "을 공격합니다.");
-			System.out.println(p2.name + " 에게 " + this.attackpower + "데미지!");
-			p2.hp = p2.hp - this.attackpower;
-			System.out.println(p2.name + " " + p2.hp + "/" + "100");
-			System.out.println();
-			p2.isLive();
-			p2.toString();
-		} else if (comSels == 2) {
-			System.out.println(p3.name + "을 공격합니다.");
-			System.out.println(p3.name + " 에게 " + this.attackpower + "데미지!");
-			p3.hp = p3.hp - this.attackpower;
-			System.out.println(p3.name + " " + p3.hp + "/" + "100");
-			System.out.println();
-			p3.isLive();
-			p3.toString();
-		} else if (comSels == 3) {
-			System.out.println(p4.name + "을 공격합니다.");
-			System.out.println(p4.name + " 에게 " + this.attackpower + "데미지!");
-			p4.hp = p4.hp - this.attackpower;
-			System.out.println(p4.name + " " + p4.hp + "/" + "100");
-			System.out.println();
-			p4.isLive();
-			p4.toString();
-		} else if (comSels == 4) {
-			System.out.println(p5.name + "을 공격합니다.");
-			System.out.println(p5.name + " 에게 " + this.attackpower + "데미지!");
-			p5.hp = p5.hp - this.attackpower;
-			System.out.println(p5.name + " " + p5.hp + "/" + "100");
-			System.out.println();
-			p5.isLive();
-			p5.toString();
-		}
-
+		
 	}
 
 	// 플레이어 1, 2, 3, 4, 5를 대상으로 공격 대상을 선정합니다.
 	public void attack() {
-		Player01 p1 = new Player01();
-		Player02 p2 = new Player02();
-		Player03 p3 = new Player03();
-		Player04 p4 = new Player04();
-		Player05 p5 = new Player05();
-		System.out.println();
-		System.out.println("공격할 대상을 선택해주세요.");
-		System.out.println("1 : " + p1.name);
-		System.out.println("2 : " + p2.name);
-		System.out.println("3 : " + p3.name);
-		System.out.println("4 : " + p4.name);
-		System.out.println("5 : " + p5.name);
-		String userSels = scanner.next();
-		if (userSels.equals("1")) {
-			System.out.println(p1.name + "을 선택하셨습니다.");
-			System.out.println(p1.name + " 에게 " + this.attackpower + "데미지!");
-			p1.hp = p1.hp - this.attackpower;
-			System.out.println(p1.name + " " + p1.hp + "/" + "100");
-			System.out.println();
-			p1.isLive();
-			p1.toString();
-		} else if (userSels.equals("2")) {
-			System.out.println(p2.name + "을 선택하셨습니다.");
-			System.out.println(p2.name + " 에게 " + this.attackpower + "데미지!");
-			p2.hp = p2.hp - this.attackpower;
-			System.out.println(p2.name + " " + p2.hp + "/" + "100");
-			System.out.println();
-			p2.isLive();
-			p2.toString();
-		} else if (userSels.equals("3")) {
-			System.out.println(p3.name + "을 선택하셨습니다.");
-			System.out.println(p3.name + " 에게 " + this.attackpower + "데미지!");
-			p3.hp = p3.hp - this.attackpower;
-			System.out.println(p3.name + " " + p3.hp + "/" + "100");
-			System.out.println();
-			p3.isLive();
-			p3.toString();
-		} else if (userSels.equals("4")) {
-			System.out.println(p4.name + "을 선택하셨습니다.");
-			System.out.println(p4.name + " 에게 " + this.attackpower + "데미지!");
-			p4.hp = p4.hp - this.attackpower;
-			System.out.println(p4.name + " " + p4.hp + "/" + "100");
-			System.out.println();
-			p4.isLive();
-			p4.toString();
-		} else if (userSels.equals("5")) {
-			System.out.println(p5.name + "을 선택하셨습니다.");
-			System.out.println(p5.name + " 에게 " + this.attackpower + "데미지!");
-			p5.hp = p5.hp - this.attackpower;
-			System.out.println(p5.name + " " + p5.hp + "/" + "100");
-			System.out.println();
-			p5.isLive();
-			p5.toString();
-		} else {
-			System.out.println("올바른 대상을 선택해주세요.");
-			this.attack();
-		}
+		
 	}
 
 	// hp를 1과 비교. 1 미만이라면 isLive를 false로 return
@@ -227,6 +132,32 @@ public class Base {
 	public void doAuto() {
 		this.autoAttack01();
 		this.autoAttack02();
-		this.autoAttack03();
 	}
+	
+	public void lifeMethod() {
+		this.isLive();
+		this.toString();
+	}
+	
+	public String anouncerMent() {
+		Random random = new Random();
+		int randomTags = random.nextInt(5);
+		if(randomTags == 0) {
+			return this.name + "선수의 일격! 공격이 적중합니다!";
+		}
+		else if(randomTags == 1) {
+			return "이야! 적중합니다! 괜히 피하려다가 더 아프게 맞은 것 같네요!";
+		}
+		else if(randomTags == 2) {
+			return this.name + "선수의 시원한 한 방입니다! 관중석에서도 타격감이 느껴지네요!";
+		}
+		else if(randomTags == 3) {
+			return "몸쪽으로 타격이 꽂힙니다! 좋은 타격이었네요!" + this.name + "선수!";
+		}
+		else {
+			return "그럭저럭 나쁘지 않은 공격이었습니다.";
+		}
+	}
+	
+	
 }
