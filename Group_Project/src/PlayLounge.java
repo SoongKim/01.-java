@@ -10,10 +10,10 @@ public class PlayLounge {
 			System.out.println(i + "round");
 			System.out.println("순서를 정합니다.");
 			for (int j = 0; j < userCount; j++) {
-				if (player[i].hp < 1) {
-					continue;
-				}
-				player[i].dm.diceFive();
+//				if (player[i].hp < 1) {
+//					continue;
+//				}
+//				player[i].dm.diceFive();
 				System.out.println("user " + (i+1) + " 은/는 "+ this.diceFive() + "가 나왔습니다.");
 			}
 		}

@@ -6,7 +6,7 @@ public class First extends Base {
    String [] attactName= {"기본공격", "Attack1", "Attack2"};
    First(){
 	   this.name = "MIRROR";
-	   this.attactName= {};
+	   //this.attactName= {};
    }
    int lastDamage = 0;
    int damage = 10;

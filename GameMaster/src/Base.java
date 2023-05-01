@@ -7,8 +7,10 @@ public class Base {
 	int hp;
 	int power;
 	String name;
+	String characterInfo;
 	int attackpower;
 	int userCount = 1;
+	int pp = 5;
 	boolean isLive = true;
 	boolean selected = false;
 	boolean token;
@@ -39,14 +41,19 @@ public class Base {
 			// 일반공격 선택 시 10면체 주사위를 굴린 값을 공격 데미지로 저장합니다.
 
 		} else if (attackSkill.equals("1")) {
-			System.out.println();
-			System.out.println("10면체 주사위를 굴립니다.");
-			int diceTen = dm.diceTen();
-			this.attackpower = diceTen;
-			System.out.println(diceTen + " 이/가 나왔습니다.");
-			// +alpha
-			// 기술공격 선택 시 적용 로직 별로 데미지를 산정해주세요.
-			// 데미지 산정 간에는 10면체를 기준으로 설정해주세요.
+			if(this.pp > 0) {
+				System.out.println();
+				System.out.println("10면체 주사위를 굴립니다.");
+				int diceTen = dm.diceTen();
+				this.attackpower = diceTen;
+				System.out.println(diceTen + " 이/가 나왔습니다.");
+				this.pp--;
+			}
+			else {
+				System.out.println("기술 사용 횟수가 다하였습니다.");
+				this.attackMethod();
+			}
+			
 		}
 	}
 
@@ -92,18 +99,6 @@ public class Base {
 		}
 	}
 
-	// 컴퓨터가 무작위로 대상을 선택합니다.
-	// 지금 로직대로면, 자해를 막을 수 없습니다.
-	// 탈락한 캐릭터에 대한 공격이 발생할 경우를 막을 추가 제어 또한 필요합니다.
-	public void autoAttack03() {
-		
-	}
-
-	// 플레이어 1, 2, 3, 4, 5를 대상으로 공격 대상을 선정합니다.
-	public void attack() {
-		
-	}
-
 	// hp를 1과 비교. 1 미만이라면 isLive를 false로 return
 	// 1 이상이라면 isLive를 true로 return
 	public boolean isLive() {
@@ -126,7 +121,6 @@ public class Base {
 
 	public void doAction() {
 		this.attackMethod();
-		this.attack();
 	}
 
 	public void doAuto() {
@@ -158,6 +152,5 @@ public class Base {
 			return "그럭저럭 나쁘지 않은 공격이었습니다.";
 		}
 	}
-	
 	
 }

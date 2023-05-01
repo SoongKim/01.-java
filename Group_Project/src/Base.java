@@ -51,7 +51,7 @@ public class Base {
 
 	public int Attack1() {
 		return power;
-		상대의underAttack(power);
+		//상대의underAttack(power);
 	}
 
 //	공격시
