@@ -1,10 +1,11 @@
 import java.io.FileInputStream;
+import java.util.Arrays;
 //import java.util.Arrays;
 import java.util.Scanner;
 
 public class Third {
    public static void main(String[] args) throws Exception {
-      System.setIn(new FileInputStream("src/Tpa2.txt"));
+      System.setIn(new FileInputStream("src/tpa1.txt"));
       Scanner sc = new Scanner(System.in);
       
       
@@ -18,6 +19,9 @@ public class Third {
             arr[i][j] = sc.nextInt();
          }
       }
+      
+      System.out.println(Arrays.deepToString(arr));
+      
       int length = sc.nextInt();
       String a = sc.nextLine();//버리는거(enter)
       String b ="";
